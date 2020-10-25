@@ -1,4 +1,4 @@
-const fs = require('fs')
+
 
 
 console.log('Client side javascript file is loaded!')
