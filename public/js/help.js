@@ -27,5 +27,3 @@ titleProblem.addEventListener('submit', (e) => {
     }
  
 })
-
-
