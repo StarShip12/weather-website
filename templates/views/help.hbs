@@ -13,10 +13,18 @@
 
     <div class="main-content">
         {{>header}}
-    <p>Help page</p>
+    <form id="p">
+        <input  id="tap" placeholder='Title of the problem'>
+        <input id ="dop" placeholder='Description of the problem'>
+        <button id='helpB'>Send</button>
+    </form>
+    <p id='messageOk'></p>
     </div>
     
     {{>footer}}
+    
+
+    <script src="/js/help.js"></script>
     
 <body>
 

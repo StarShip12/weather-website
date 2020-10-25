@@ -54,6 +54,7 @@ header a {
 input {
     border: 1px solid #cccccc;
     padding: 8px;
+    margin-bottom: 16px;
 }
 
 button {
@@ -62,4 +63,14 @@ button {
     background: #888888;
     color: white;
     padding: 8px;
+    margin-bottom: 8px;
+}
+
+#helpB {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+    margin-bottom: 8px;
 }
