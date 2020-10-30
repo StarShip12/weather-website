@@ -1,5 +1,6 @@
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
+const converter = require('./utils/converter.js')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
@@ -47,7 +48,7 @@ app.get('/help', (req, res) => {
     })
 })
 
-app.get('/title', (req,res) => {
+app.get('/messageoftheweek', (req,res) => {
     res.render('title', {
         title: 'Message of the week',
         name: 'Created by Jan'
@@ -119,6 +120,24 @@ geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
     })
 })
 
+app.get('/converter/coord', (req, res) => {
+
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide an address'
+        })
+    }
+
+    converter (req.query.address, (error, converterData) => {
+        if (error){
+            return res.send({error})
+        }
+
+        res.send({
+            location: converterData
+        })
+    })
+})
 
 
 app.get('/products', (req, res) => {

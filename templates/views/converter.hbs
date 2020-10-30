@@ -11,15 +11,27 @@
 <body>
     <div class='main-content'>
        {{>header}}
-       <p>Use this site to convert an adress to coordinates.</p> 
-       <form>
-           <input placeholder='Location'>
-           <button>Search</button>
+       <p>Use this site to convert an adress or coordinates to the oposite data.</p> 
+       <form id='ltc'>
+           <input id='loc' placeholder='Location'>
+           <button>Calculate</button>
        </form>
 
-       <p id='message-3'></p>
+        <p id='message-3'></p>
        <p id='message-4'></p>
        <p id='message-5'></p>
+
+       
+       <form id='ctl'>
+           <input id='lat' placeholder='latitude'>
+           <input id='lon' placeholder='longitude'>
+           <button>Calculate</button>
+       </form>
+
+        <p id='message-6'></p>
+       <p id='message-7'></p>
+       <p id='message-8'></p>
+       
     </div>
     
     {{>footer}}
@@ -29,4 +41,4 @@
     <script src="/js/converter.js"></script>
 <body>
 
-<html>
+<html> 
