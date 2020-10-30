@@ -87,6 +87,40 @@ geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
 
 })
 
+app.get('/converter', (req, res) => {
+    res.render('converter', {
+        title: 'Converter',
+        name: 'Created by Jan'
+    })
+})
+
+app.get('/converter/convert', (req, res) => {
+
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide an address'
+
+    
+    
+        })
+    }
+
+geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
+    if (error){
+        return res.send({error})
+    }
+    const errorLocation = 'Can not find location'
+    res.send({
+        latitude,
+        longitude,
+        location,
+        errorLocation
+        })
+    })
+})
+
+
+
 app.get('/products', (req, res) => {
     if(!req.query.search){
         return res.send({
