@@ -9,6 +9,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+app.use(express.urlencoded({extended: false}))
+
 const port = process.env.PORT || 3000
 
 // Define paths for express config
@@ -20,9 +22,11 @@ app.set('view engine', 'hbs')
 app.set('views', viewPath)
 hbs.registerPartials(partialsPath)
 // Setup static  dir. to serve
+app.use(require('./routes/index'))
 app.use(express.static(publicDirectoryPath))
 
-app.get('', (req, res) => {
+
+app.get('/', (req, res) => {
     res.render('index',{
         title: 'Weather',
         name: 'Created by Jan'
@@ -30,7 +34,13 @@ app.get('', (req, res) => {
     })
 })
 
-
+app.get('/ok', (req, res) => {
+    res.render('ok', {
+        title: 'success',
+        name: 'Created by Jan'
+        
+    })
+})
 
 app.get('/about', (req, res) => {
     res.render('about', {
@@ -138,6 +148,7 @@ app.get('/converter/coord', (req, res) => {
         })
     })
 })
+
 
 
 app.get('/products', (req, res) => {

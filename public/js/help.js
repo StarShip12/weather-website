@@ -1,9 +1,19 @@
+/* 
+
+const {Router} = require('express')
+const router = Router()
+
+
+
+
+module.exports = router
+
 
 
 
 const titleProblem = document.querySelector('#p')
-const sendTitle = document.querySelector('#tap')
-const sendDes = document.querySelector('#dop')
+const sendTitle = document.querySelector('#TitleOfProblem')
+const sendDes = document.querySelector('#DescriptionOfProblem')
 
 
 titleProblem.addEventListener('submit', (e) => {
@@ -23,7 +33,7 @@ titleProblem.addEventListener('submit', (e) => {
     } else if (desPro === ''){
         messageOk.textContent = 'You must provide a description of the problem!'
     }else{
-        messageOk.textContent = 'Problem sended. We are going to work in the problem!'
+        messageOk.textContent = 'Problem sended. We`re going to work in the problem!'
     }
  
-})
+})  */

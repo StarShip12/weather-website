@@ -1,31 +1,49 @@
-<!DOCTYPE html>
 
-<html>
-    
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Help</title>
     <link rel='icon' href='/img/weather.png'>
-    <link rel='stylesheet' href='/css/styles.css'>
-
-<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="main.css">
+</head>
 
 <body>
+    {{>header}}
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/send-email" method="POST">
 
-    <div class="main-content">
-        {{>header}}
-    <form id="p">
-        <input  id="tap" placeholder='Title of the problem'>
-        <input id ="dop" placeholder='Description of the problem'>
-        <button id='helpB'>Send</button>
-    </form>
-    <p id='messageOk'></p>
+                            <div id="input" class="form-group">
+                                <input type="text" name="name" class="form-control" placeholder="Name" autofocus>
+                            </div>
+
+                            <div id="input" class="form-group">
+                                <input type="text" name="email" placeholder="Email" class="form-control">
+                            </div>
+                            <div class="form-group" id="boldform">
+                                <textarea type="text" name="message" placeholder="Message" class="form-control">
+                                </textarea>
+                            </div>
+                            <button class="btn btn-primary btn-block">
+                                Send
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    {{>footer}}
-    
+{{>footer}}
+<script src="/js/help.js"></script>
+</body>
 
-    <script src="/js/help.js"></script>
-    
-<body>
-
-<html>
+</html>

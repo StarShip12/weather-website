@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <title>Help</title>
+    <link rel='icon' href='/img/weather.png'>
+    <link rel='stylesheet' href='/css/styles.css'>
+
+<head>
+
+<body>
+
+    <div class="main-content">
+        {{>header}}
+    <form action="/send-email" method="POST">
+        <input  id="TitleOfProblem" placeholder='Title of the problem'>
+        <input id ="DescriptionOfProblem" placeholder='Description of the problem'>
+        <button id='HelpSendButton'>Send</button>
+    </form>
+    <p id='messageOk'></p>
+    </div>
+    
+    {{>footer}}
+    
+
+    <script src="/js/help.js"></script>
+    
+<body>
+
+<html>
