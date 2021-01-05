@@ -2,7 +2,9 @@ const {Router} = require('express')
 const nodemailer = require('nodemailer')
 const router = Router()
 
-router.post('/send-email', async (req, res) => {
+const ObjectiveEmail = document.querySelector('#omail')
+
+router.post('/send-emails', async (req, res) => {
     const {name, email, message} =  req.body
     contentHTML = `
         <h1> Problem Information </h1>

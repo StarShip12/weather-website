@@ -57,7 +57,13 @@ app.get('/help', (req, res) => {
         
     })
 })
-
+app.get('/email-sender', (req, res) => {
+    res.render('email-sender', {
+        title: 'Send an email',
+        name: 'Created by Jan'
+        
+    })
+})
 app.get('/messageoftheweek', (req,res) => {
     res.render('title', {
         title: 'Message of the week',
