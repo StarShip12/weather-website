@@ -1,9 +1,22 @@
 const {Router} = require('express')
 const nodemailer = require('nodemailer')
+const validator = require('validator')
 const router = Router()
+
 
 router.post('/send-email', async (req, res) => {
     const {name, email, message} =  req.body
+
+    if(!validator.isEmail(email)){
+        
+
+        return res.send(email + ' is not a real email')
+
+        //throw new Error('Email must be a real email')
+        
+        //return console.log('Must be a real mail')
+    }
+
     contentHTML = `
         <h1> Problem Information </h1>
         <ul>
