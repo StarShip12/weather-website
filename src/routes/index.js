@@ -9,10 +9,14 @@ router.post('/send-email', async (req, res) => {
 
     if(!validator.isEmail(email)){
         
+<<<<<<< HEAD
 
         return res.send(email + ' is not a real email')
 
         //throw new Error('Email must be a real email')
+=======
+        throw new Error('Email must be a real email')
+>>>>>>> ac870e32c74d71360221ee49c85c76b55cb8a368
         
         //return console.log('Must be a real mail')
     }
